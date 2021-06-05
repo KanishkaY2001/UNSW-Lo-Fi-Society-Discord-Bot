@@ -60,6 +60,7 @@ client.on('ready', () => {
     });
 
     // Update pomodoro sessions:
+    getServerStats() // Initializes server data
     const pomodoro_job = schedule.scheduleJob({ start: Date.now(), rule: '*/1 * * * *' }, function(){
         let s_stats = client.getAllServer.get();
         let pomodoro_stats = s_stats.pomodoroSess.split(',');
