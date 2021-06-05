@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 
-const {prefix, token} = require('./config.json');
+//const {prefix, token} = require('./config.json');
+const prefix = '+';
+const token = process.env.token;
+
 const client = new Discord.Client();
 const SQLite = require("better-sqlite3");
 const u_sql = new SQLite('./user_db/userStats.sqlite');
