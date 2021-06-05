@@ -1,1 +1,1 @@
-This is a folder containing all the backup data files
+This is a folder containing all the backup data files.
