@@ -34,9 +34,11 @@ module.exports = {
                     fs.mkdirSync(`${final_name}/${db_arr[i]}`)
                 }
                 fs.readdirSync(`./${db_arr[i]}/`).forEach((file) => {
-                    fs.copyFile(`./${db_arr[i]}/${file}`, `${final_name}/${db_arr[i]}/${file}`, (err) => {
-                        if (err) throw err;
-                    });
+                    if (file != 'README.md') {
+                        fs.copyFile(`./${db_arr[i]}/${file}`, `${final_name}/${db_arr[i]}/${file}`, (err) => {
+                            if (err) throw err;
+                        });
+                    }
                 })
             }
             errorEmbed.description = `Data has been successfuly backed up.
